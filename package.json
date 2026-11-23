@@ -1,0 +1,38 @@
+{
+  "name": "lagoon-cove-tides",
+  "author": "Pebble plugin",
+  "version": "1.0.0",
+  "private": true,
+  "pebble": {
+    "displayName": "Lagoon Cove Tides",
+    "uuid": "8f8f6e6d-38a8-4d9c-9941-a4b667f38305",
+    "sdkVersion": "3",
+    "usesPermissions": [
+      {
+        "name": "Internet",
+        "parameters": {
+          "domains": ["www.tides.gc.ca"]
+        },
+        "reason": "Fetch Canadian Hydrographic Service tide predictions for Lagoon Cove.",
+        "required": true
+      }
+    ],
+    "plugin": {
+      "description": "Tide direction and next high/low tide time for Lagoon Cove, British Columbia.",
+      "script": "src/plugin/index.js",
+      "sources": [
+        {
+          "category": "tides",
+          "items": ["next"],
+          "properties": {
+            "rising": ["boolean"],
+            "next_tide_time": ["shortText", "longText"],
+            "next_tide_type": ["shortText", "longText"]
+          },
+          "supportsMultiple": false,
+          "suggestedRefreshIntervalSec": 900
+        }
+      ]
+    }
+  }
+}
