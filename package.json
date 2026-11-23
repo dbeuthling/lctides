@@ -3,6 +3,7 @@
   "author": "Pebble plugin",
   "version": "1.0.0",
   "private": true,
+  "projectType": "plugin",
   "pebble": {
     "displayName": "Lagoon Cove Tides",
     "uuid": "8f8f6e6d-38a8-4d9c-9941-a4b667f38305",
